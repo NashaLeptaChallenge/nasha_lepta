@@ -8,4 +8,4 @@
  * Constant in the nashaLeptaApp.
  */
 angular.module('nashaLeptaApp')
-  .constant('FirebaseLink', 'https://boiling-fire-9518.firebaseio.com');
+  .constant('FirebaseLink', 'https://sweltering-fire-3034.firebaseio.com');
