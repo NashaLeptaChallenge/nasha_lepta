@@ -1,7 +1,7 @@
-  <a href="#/albums"><span class="glyphicon glyphicon-circle-arrow-left"
+<div ng-show="ready">
+  <a href="#/albums" ><span class="glyphicon glyphicon-circle-arrow-left"
                            aria-hidden="true"></span></a>
-<div ng-show="ready" class="text-center">
-  <ul class="list-inline">
+  <ul class="list-inline text-center">
     <li ng-repeat="photo in photoObjects | orderBy:'thumbheight'" class="col-md-4">
       <a ng-click="openLightboxModal($index)">
         <img class="img-thumbnail img-responsive" src="{{photo.thumb}}">
