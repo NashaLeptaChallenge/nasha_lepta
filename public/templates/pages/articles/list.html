@@ -1,13 +1,13 @@
 <div class="article-content" ng-show='auth.user'>
   <div class="articles-header">
     <h1 title="Articles">Статьи</h1>
-    <a class="btn btn-default" href='#/{{articleModelsLocation}}/new'>
+    <a class="btn btn-default" href='#!/{{articleModelsLocation}}/new'>
       Создать статью <span class="glyphicon glyphicon-plus-sign"></span>
     </a>
   </div>
   <p ng-show="article">Статей пока нет</p>
   <div class="article-wrapper" ng-repeat="article in articles">
-    <a ng-href="#/{{articleModelsLocation}}/{{article.id}}">
+    <a ng-href="#!/{{articleModelsLocation}}/{{article.id}}">
       {{article.id}}
     </a>
   </div>

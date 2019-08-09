@@ -34,7 +34,7 @@
     <div class="container ">
       <div class="row ">
         <div class="vcentered-col">
-          <img src="images/logo.png" alt="logo" class="img-responsive col-centered"/>
+          <img src="images/logo.png" alt="logo" class="img-responsive col-centered hidden-xs hidden-sm"/>
         </div>
         <div class="col-md-10 vcentered-col ">
           <div class="row">
@@ -47,46 +47,88 @@
           <div class="row">
             <div class="col-md-1">&nbsp;</div>
             <div class="col-md-7"><img src="images/lenta.png" alt="lenta" class="img-responsive col-centered" /></div>
-            <div class="col-md-4 "><a class="btn btn-header margin-05 pull-left" href="http://sv-nikolay.kiev.ua/">www.sv-nikolay.kiev.ua</a></div>
+            <div class="col-md-4 hidden-sm hidden-xs"><a class="btn btn-header margin-05 pull-left" href="http://sv-nikolay.kiev.ua/">www.sv-nikolay.kiev.ua</a></div>
           </div>
           <div class="row">
             <div class="col-md-9 text-center preambula bcolor">
               Благотворительный проект
             </div>
           </div>
-          <div class="row">
+          <div class="row hidden-xs hidden-sm big-menu">
             <ul class="nav text-uppercase navbar-right navbar-nav">
               <li>
-                <a href="#/">
+                <a href="#!/">
                   Главная
                 </a>
               </li>
               <li>
-                <a href="#/about">
+                <a href="#!/about">
                   О проекте
                 </a>
               </li>
               <li>
-                <a href="#/gratitude">
+                <a href="#!/gratitude">
                   Благодарности
                 </a>
               </li>
               <li>
-                <a href="#/articles/smi">
+                <a href="#!/externals">
                   СМИ о проекте
                 </a>
               </li>
               <li>
-                <a href="#/articles/actions">
+                <a href="#!/actions">
                   Акции
                 </a>
               </li>
               <li>
-                <a href="#/contacts">
+                <a href="#!/contacts">
                   Контакты
                 </a>
               </li>
             </ul>
+          </div>
+          <div class="mobile-menu hidden-md nav text-center ">
+            <a href="#!/" data-target=".nav-collapse" data-toggle="collapse">
+              <span>Меню</span>
+            <span class="glyphicon glyphicon-menu-hamburger"
+                  aria-hidden="true"></span>
+            </a>
+            <div class="nav-collapse collapse">
+              <ul class="text-uppercase nav">
+                <li>
+                  <a href="#!/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  <a href="#!/about">
+                    О проекте
+                  </a>
+                </li>
+                <li>
+                  <a href="#!/gratitude">
+                    Благодарности
+                  </a>
+                </li>
+                <li>
+                  <a href="#!/externals">
+                    СМИ о проекте
+                  </a>
+                </li>
+                <li>
+                  <a href="#!/actions">
+                    Акции
+                  </a>
+                </li>
+                <li>
+                  <a href="#!/contacts">
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>
@@ -94,8 +136,8 @@
   </div>
   <div ng-controller="SlidesListCtrl" class="main-carousel padding-20" ng-show="location() === '/' && slides.length > 0">
     <div class="container">
-      <div class="row banner-container">
-        <uib-carousel interval="12000" active="active" class="photo-with-caption-container slider">
+      <div class="banner-container">
+        <uib-carousel interval="12000" active="active" class="photo-with-caption-container slider " no-wrap="true">
           <uib-slide ng-repeat="slide in slides" index="$index" >
             <div class="photo-with-caption-container slider">
               <figure>
@@ -111,11 +153,16 @@
             </div>
           </uib-slide>
         </uib-carousel>
-        <div class="col-md-4 text-center banner bgimage">
-          <h1 class="text-uppercase">Внести свою<br>лепту</h1>
-          <p class="margin-35">Вместе<br>Мы сможем больше!</p>
-          <a href="#/requisites" class="btn btn-default">Помочь детям</a>
+        <div class="col-md-4 hidden-sm hidden-xs text-center banner bgimage">
+          <h2 class="text-uppercase">Добрых дел много не бывает</h2>
+          <p class="margin-35"></p>
+          <a href="#!/requisites" class="btn btn-default">Помочь проекту</a>
         </div>
+      </div>
+      <div class="hidden-md text-center banner bgimage">
+        <h3 class="text-uppercase">Добрых дел<br>много не бывает</h3>
+        <!--<p class="margin-35"></p>-->
+        <a href="#!/requisites" class="btn btn-default">Помочь проекту</a>
       </div>
     </div>
   </div>
@@ -154,7 +201,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-4 text-center">
+      <div class="col-xs-12 col-md-4 text-center hidden-xs hidden-sm">
         <div class="row">
           <img src="images/lenta.png" alt="lenta" class="img-responsive col-centered" />
         </div>
@@ -163,19 +210,19 @@
           <img src="images/logo.png" alt="logo" class="img-responsive col-centered"/>
         </div>
         <div class="row">
-          <p><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Наша лепта 2015&ndash;<span id="currentYear"></span></p>
+          <p><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Наша лепта <span id="currentYear"></span></p>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
         <br>
         <br>
-        <h2>Партнёры:</h2>
+        <h2>Полезные ссылки:</h2>
         <div class="nl-links margin-top-20">
           <!--<h3 class="text-center">Ссылки</h3>-->
           <div class="row text-center">
             <div class="col-md-4 col-sm-4 col-xs-4">
-              <a href="http://orthodoxy.org.ua/" target="_blank">
-                <img src="http://churches.kiev.ua/images/banners/orthodox_uoc_88_31.jpg"
+              <a href="http://foma.in.ua/" target="_blank">
+                <img src="images/links/fomaLogoSmall.png" width="88" alt="foma"
                      class="img-responsive"/>
               </a>
             </div>
@@ -195,8 +242,8 @@
           <div class="row"><br></div>
           <div class="row text-center">
             <div class="col-md-4 col-sm-4 col-xs-4">
-              <a href="http://cpg.in.ua/" target="_blank">
-                <img src="images/links/cerkPravGazeta.png" width="88" alt="cerkPravGazeta"
+              <a href="http://orthodox.org.ua/" target="_blank">
+                <img src="images/links/orthodox_uoc_88_31.jpg" width="88" alt="cerkPravGazeta"
                      class="img-responsive"/>
               </a>
             </div>
@@ -207,8 +254,8 @@
               </a>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4">
-              <a href="http://miloserdie-mission.org/" target="_blank">
-                <img src="images/links/miloserdie.png" width="88" alt="miloserdie"
+              <a href="http://tel0800502686.church.ua/" target="_blank">
+                <img src="images/links/nadiaPidtrimka.jpg" width="88" alt="sinodDepart"
                      class="img-responsive"/>
               </a>
             </div>
@@ -275,7 +322,6 @@
 <script src="scripts/controllers/carousel.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/directives/nlRandomGroup.js"></script>
-<script src="scripts/services/firebaseLink.js"></script>
 <script src="scripts/directives/nlRandomAlbum.js"></script>
 <script src="scripts/controllers/gallerylightbox.js"></script>
 <script src="scripts/directives/popup.js"></script>
@@ -297,6 +343,9 @@
 <script src="scripts/controllers/news/create.js"></script>
 <script src="scripts/controllers/news/show.js"></script>
 <script src="scripts/controllers/news/update.js"></script>
+<script src="scripts/controllers/externals/list.js"></script>
+<script src="scripts/controllers/externals/create.js"></script>
+<script src="scripts/controllers/externals/update.js"></script>
 <script src="scripts/services/htmlToPlainText.js"></script>
 <script src="scripts/services/modelGrouper.js"></script>
 <script src="scripts/controllers/landing.js"></script>
@@ -307,15 +356,33 @@
 <script src="scripts/controllers/videoGallery/list.js"></script>
 <script src="scripts/controllers/videoGallery/update.js"></script>
 <script src="scripts/services/youtubeKeyHolder.js"></script>
+<script src="scripts/services/flickrKeyHolder.js"></script>
 <script src="scripts/services/youtubeListResponseConverter.js"></script>
 <script src="scripts/services/playlistFetcher.js"></script>
+<script src="scripts/services/flickrAlbumFetcher.js"></script>
 <script src="scripts/controllers/modalInstance.js"></script>
 <script src="scripts/services/playListIdExtractor.js"></script>
 <script src="scripts/services/subProjectPrefixer.js"></script>
 <script src="scripts/controllers/googleMap.js"></script>
 <script src="scripts/services/groupQtyResizer.js"></script>
+<script src="scripts/directives/imageOrVideoModal.js"></script>
+<script src="scripts/controllers/imageOrVideoModal.js"></script>
+<script src="scripts/services/flickrJsonToUrlConverter.js"></script>
+<script src="scripts/services/flickrAlbumIdExtractor.js"></script>
+<script src="scripts/directives/flickr.js"></script>
 <!-- endbuild -->
 <script src="scripts/ckeditor/ckeditor.js"></script>
-
+  <script>
+    var FirebaseLink = 'boiling-fire-9518';
+    var config = {
+      apiKey: "AIzaSyBgaXn8U4iIUTswBeQoerJsX3oU3Hk0o-U",
+      authDomain: FirebaseLink + ".firebaseapp.com",
+      databaseURL: "https://"+FirebaseLink+".firebaseio.com",
+      projectId: FirebaseLink,
+      storageBucket: FirebaseLink+ ".appspot.com",
+      messagingSenderId: "488773277256"
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 </html>

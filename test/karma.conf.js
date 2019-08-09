@@ -64,6 +64,7 @@ module.exports = function(config) {
       'test/spec/**/*.js',
     //  load templates for testing
       'public/templates/directives/*.html',
+      'public/templates/vendor/**/*.html',
       {pattern: 'test/mock/*.json', watched: true, served: true, included: false}
     ],
 

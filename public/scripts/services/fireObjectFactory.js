@@ -9,30 +9,27 @@
  */
 angular.module('nashaLeptaApp')
   .factory('FireObjects', [
-    'FirebaseLink',
+    'firebase',
     '$firebaseArray',
     '$firebaseObject',
-    function FireObjectsFactory(FirebaseLink, $firebaseArray, $firebaseObject) {
+    function FireObjectsFactory(firebase, $firebaseArray, $firebaseObject) {
       return {
         all: function(models) {
-          var ref = new Firebase(FirebaseLink+"/"+models+"/");
-          return $firebaseArray(ref);
+          return $firebaseArray(firebase.database().ref(models));
         },
         find: function(models, id){
-          var ref = new Firebase(FirebaseLink+"/"+models+"/" + id);
-          return $firebaseObject(ref);
+          return $firebaseObject(firebase.database().ref(models).child(id));
         },
         update: function(model) {
           console.log('FireObjectsFactory: update method is blocked, use .$save() on $firebaseObject\n' +
           'Details on https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebaseobject-save');
         },
         create: function(models, id) {
-          var ref = new Firebase(FirebaseLink+"/"+models+"/" + id);
-          return $firebaseObject(ref);
+          return $firebaseObject(firebase.database().ref(models).child(id));
         },
         findSingle:function(id){
-          var ref = new Firebase(FirebaseLink+"/"+ id);
-          return $firebaseObject(ref);
+          return $firebaseObject(firebase.database().ref(id));
         }
       };
-    }]);
+    }
+    ]);

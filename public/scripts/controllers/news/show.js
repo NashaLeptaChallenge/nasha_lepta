@@ -8,8 +8,8 @@
  * Controller of the nashaLeptaApp
  */
 angular.module('nashaLeptaApp')
-  .controller('NewsShowCtrl', function ($scope, $routeParams, FireObjects, SubProjectPrefixer, IsNeedToCompileFurther, $sce) {
-    var noveltyModelsLocation = SubProjectPrefixer('news');
+  .controller('NewsShowCtrl', function ($scope, $routeParams, FireObjects, SubProjectPrefixer, IsNeedToCompileFurther, $sce, model) {
+    var noveltyModelsLocation = SubProjectPrefixer(model);
     $scope.noveltyModelsLocation=noveltyModelsLocation;
     FireObjects.find(noveltyModelsLocation, $routeParams.id).$loaded()
       .then(function(novelty) {

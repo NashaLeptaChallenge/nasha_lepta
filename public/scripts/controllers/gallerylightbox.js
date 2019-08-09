@@ -10,7 +10,7 @@
 angular.module('nashaLeptaApp')
   .controller('GalleryLightboxCtrl', function ($scope, Lightbox) {
     $scope.openLightboxModal = function (index) {
-      Lightbox.keyboardNavEnabled=false;
+      Lightbox.keyboardNavEnabled=true;
       Lightbox.openModal($scope.photoObjects, index);
     };
   });

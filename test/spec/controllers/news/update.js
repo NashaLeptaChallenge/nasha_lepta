@@ -12,7 +12,8 @@ describe('Controller: NewsUpdateCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     NewsUpdateCtrl = $controller('NewsUpdateCtrl', {
-      $scope: scope
+      $scope: scope,
+      model: 'news'
       // place here mocked dependencies
     });
   }));

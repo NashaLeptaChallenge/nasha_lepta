@@ -368,8 +368,10 @@ a > h6, button > h6 {
   position: absolute;
   font-size: 5em;
   color: rgba(0, 0, 0, 0.7);
-  top: 30%;
-  left: 42%;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  margin: -0.7em  0 0 -0.5em;
   z-index: 1;
 }
 .video:hover:after {
@@ -381,8 +383,9 @@ a > h6, button > h6 {
   position: absolute;
   font-size: 5em;
   color: rgba(203, 23, 29, 1);;
-  top: 30%;
-  left: 42%;
+  top: 50%;
+  left: 50%;
+  margin: -0.7em  0 0 -0.5em;
   z-index: 2;
 }
 /*specific video end*/
@@ -489,19 +492,36 @@ a > h6, button > h6 {
 
 .angular-google-map-container { height: 400px; }
 
-/*Novelty css starts*/
-.novelty-link-date {
+/*Novelty, external css starts*/
+.novelty-link-date, .external-link-date {
   background-color: white;
   padding: 0.5em 1em;
 }
-.novelty-link-date a {
+.novelty-link-date a, .external-link-date a  {
   color: black;
 }
 
-.novelty-summary-view{
+.novelty-summary-view, .external-summary-view{
   padding: 1em 0;
 }
-/*Novelty css ends*/
+
+.novelty-summary-view p, .external-summary-view p{
+  font-size: 1.2em;
+}
+
+/*Novelty, external css ends*/
+
+.nl-description{
+  font-size: 1.2em;
+}
+
+.nl-description h6{
+  font-size: 2em;
+}
+
+.main-button{
+  font-size: 2em;
+}
 
 #toTop{
   display: block;
@@ -785,12 +805,18 @@ a > h6, button > h6 {
   .container {
     width: 970px;
   }
+  .hidden-md {
+    display: none !important;
+  }
 }
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
   .container {
     width: 750px;
+  }
+  .banner{
+    display: block;
   }
 }
 
@@ -799,11 +825,20 @@ a > h6, button > h6 {
   .container {
     width: 100%;
   }
+  .hidden-sm {
+    display: none !important;
+  }
+  .banner{
+    display: block;
+  }
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
   .container {
     width: 100%;
+  }
+  .hidden-xs {
+    display: none !important;
   }
 }

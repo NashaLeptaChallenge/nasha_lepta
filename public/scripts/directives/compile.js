@@ -18,6 +18,7 @@ angular.module('nashaLeptaApp')
           // when the 'compile' expression changes
           // assign it into the current DOM
           element.html(value);
+          element.addClass('nl-description');
 
           // compile the new DOM and link it to the current
           // scope.

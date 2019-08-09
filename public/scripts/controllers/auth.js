@@ -9,19 +9,16 @@
  */
 angular.module('nashaLeptaApp')
   .controller('AuthCtrl', [
-    '$scope', '$rootScope', '$firebaseAuth', 'FirebaseLink',
-    function($scope, $rootScope, $firebaseAuth, FirebaseLink) {
-      var ref = new Firebase(FirebaseLink);
-      $rootScope.auth = $firebaseAuth(ref);
+    '$scope', '$rootScope', '$firebaseAuth', 'firebase',
+    function($scope, $rootScope, $firebaseAuth, firebase) {
+      $rootScope.auth = $firebaseAuth(firebase.auth());
       $scope.isShowLogin =false;
 
       $scope.signIn = function () {
-        $rootScope.auth.$authWithPassword({
-          email: $scope.email,
-          password: $scope.password
-        }).then(function(authData) {
+        $rootScope.auth.$signInWithEmailAndPassword($scope.email, $scope.password)
+          .then(function(authData) {
           //console.log("Logged in as:", authData.uid);
-          $rootScope.auth.user = authData.password;
+          $rootScope.auth.user = authData.email;
           //console.log($scope.auth);
         }).catch(function(error) {
           console.error("Authentication failed:", error);
@@ -29,7 +26,7 @@ angular.module('nashaLeptaApp')
       };
 
       $scope.logOut = function () {
-        $rootScope.auth.$unauth();
+        $rootScope.auth.$signOut();
         $rootScope.auth.user=null;
       };
 

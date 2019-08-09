@@ -10,13 +10,21 @@
 angular.module('nashaLeptaApp')
   .controller('SlidesListCtrl', function ($scope, FireObjects, SubProjectPrefixer, $log) {
     $scope.slides = [{
-      buttonName: "Подробнее...",
-      cover: "images/slides/gratitude_in_mitropoli.3e9e815b.jpg",
-      description: "Проектом переданы средства на завершение строительства дома для сирот в Хмельницкой области.",
-      detailsLink: "#/news",
+      buttonName: "Помочь...",
+      cover: "images/slides/children_day.f1eca941.jpg",
+      description: "Добрых дел много не бывает))",
+      detailsLink: "#!/requisites",
       id: "0",
-      title: "АКЦИЯ"
-    }];
+      title: "Наша цель - помощь детям!"
+    },
+      {
+        buttonName: "Подробнее...",
+        cover: "images/slides/mitropolit.5104107d.jpg",
+        description: "Благотворительный проект «Наша Лепта» создан по благословению  Блаженнейшего Митрополита Киевского и всей Украины Онуфрия и действует на базе храма святителя Николая Чудотворца при 17-й больнице города Киева.",
+        detailsLink: "#!/about",
+        id: "1",
+        title: "\"Наша Лепта\""
+      }];
 
     var slideModelsLocation = SubProjectPrefixer('slides');
     $scope.slideModelsLocation=slideModelsLocation;

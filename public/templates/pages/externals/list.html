@@ -1,0 +1,29 @@
+<div class="external-header" ng-show='auth.user'>
+  <div class="externals-header">
+    <h1 title="externals">Новости</h1>
+    <a class="btn btn-default" href='#!/{{externalModelsLocation}}/new'>
+      Создать упоминание в СМИ <span class="glyphicon glyphicon-plus-sign"></span>
+    </a>
+  </div>
+  <p ng-show="external">Упоминаний в СМИ пока нет</p>
+</div>
+<div ng-repeat="external in externals | orderBy:'-date'" >
+  <div class="row external-summary-view">
+    <div class="col-md-3">
+      <image-or-video-modal data="{{external.cover}}"></image-or-video-modal>
+    </div>
+    <div class="col-md-9">
+      <h2>{{external.title}}</h2>
+      <p>{{external.summary}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="external-link-date">
+        <small>{{external.date | date : "dd.MM.yyyy"}}</small>
+        <a ng-href="#!/{{externalModelsLocation}}/{{external.id}}/edit" class="btn btn-warning" ng-show='auth.user'>редактировать</a>
+        <a ng-href="{{external.reference}}" class="pull-right"><small>подробнее</small></a>
+      </div>
+    </div>
+  </div>
+</div>

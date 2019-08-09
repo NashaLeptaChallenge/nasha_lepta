@@ -4,7 +4,7 @@
       <li ng-repeat="error in errors">{{error}}</li>
     </ul>
 
-    <a type="button" class="btn btn-success" ng-href="#/{{noveltyModelsLocation}}/{{novelty.id}}" ng-show="novelty.status">
+    <a type="button" class="btn btn-success" ng-href="#!/{{noveltyModelsLocation}}/{{novelty.id}}" ng-show="novelty.status">
       {{novelty.status}} <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
     </a>
 
@@ -42,7 +42,7 @@
       </fieldset>
 
       <fieldset class="form-group"  ng-class="{ 'has-error': noveltyValidation.cover.$invalid }">
-        <label class="control-label" for="cover">Обложка альбома</label>
+        <label class="control-label" for="cover">Картинка или youtube видео новости</label>
         <input class="form-control"
                id="cover"
                name="cover"
@@ -54,6 +54,7 @@
       <div class="row novelty-summary-view">
         <div class="col-md-3">
           <img ng-src="{{novelty.cover}}" class="img-responsive">
+          <img ng-src="{{'https://i.ytimg.com/vi/'+youtubeEmbedUtils.getIdFromURL(novelty.cover) + '/hqdefault.jpg'}}" class="img-responsive">
         </div>
         <div class="col-md-9">
           <h2>{{novelty.title}}</h2>
@@ -64,7 +65,7 @@
         <div class="col-md-12">
           <div class="novelty-link-date">
             <small>{{novelty.date | date : "dd.MM.yyyy"}}</small>
-            <a ng-href="#/{{noveltyModelsLocation}}/{{novelty.id}}" class="pull-right"><small>подробнее</small></a>
+            <a ng-href="#!/{{noveltyModelsLocation}}/{{novelty.id}}" class="pull-right"><small>подробнее</small></a>
           </div>
         </div>
       </div>

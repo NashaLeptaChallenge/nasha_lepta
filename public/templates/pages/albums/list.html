@@ -1,7 +1,7 @@
 <div class="album-header" ng-show='auth.user'>
   <div class="albums-header">
     <h1 title="albums">Альбомы</h1>
-    <a class="btn btn-default" href='#/{{albumModelsLocation}}/new'>
+    <a class="btn btn-default" href='#!/{{albumModelsLocation}}/new'>
       Создать альбом <span class="glyphicon glyphicon-plus-sign"></span>
     </a>
   </div>
@@ -9,7 +9,7 @@
 </div>
 <div class="col-md-4 photo-with-caption-container" ng-repeat="album in albums | orderBy:'-date'" >
   <figure class="photo-thumbnail">
-    <a ng-href="#/{{albumModelsLocation}}/{{album.id}}">
+    <a ng-href="#!/{{albumModelsLocation}}/{{album.id}}">
       <img ng-src="{{album.cover}}" class="img-responsive">
       <figcaption class="photo-caption text-center">
         <div class="photo-caption-content">

@@ -44,7 +44,7 @@ describe('Controller: SlidesListCtrl', function () {
   it('should attach a list of awesomeThings to the scope', function () {
     expect(FireObjects).toBeDefined();
     expect(FireObjects.all).toHaveBeenCalled();
-    expect(scope.slides.length).toBe(1);
+    expect(scope.slides.length).toBe(2);
 
   });
 });

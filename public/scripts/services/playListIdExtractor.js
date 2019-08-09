@@ -16,7 +16,7 @@ angular.module('nashaLeptaApp')
     }
 
     return function (url){
-      var reg = new RegExp("[&?]list=([a-z0-9_]+)","i");
+      var reg = new RegExp("[&?]list=([a-z0-9_\-]+)","i");
       var match = reg.exec(url);
       if (match&&match[1].length>0&&youtubeValidate(url)){
         return match[1];

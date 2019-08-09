@@ -8,7 +8,7 @@
  * Controller of the nashaLeptaApp
  */
 angular.module('nashaLeptaApp')
-  .controller('NewsCreateCtrl', function ($scope, FireObjects, SubProjectPrefixer, ModelCopier, htmlToPlainText) {
+  .controller('NewsCreateCtrl', function ($scope, FireObjects, SubProjectPrefixer, ModelCopier, htmlToPlainText, model, youtubeEmbedUtils) {
     $scope.novelty ={
       id : "fill-me",
       summary : "краткое содержание новости",
@@ -17,7 +17,9 @@ angular.module('nashaLeptaApp')
       body: "Текст новости"
     };
 
-    var noveltyModelsLocation = SubProjectPrefixer('news');
+    $scope.youtubeEmbedUtils = youtubeEmbedUtils;
+    
+    var noveltyModelsLocation = SubProjectPrefixer(model);
     $scope.noveltyModelsLocation=noveltyModelsLocation;
 
     $scope.updateNovelty = function(novelty) {

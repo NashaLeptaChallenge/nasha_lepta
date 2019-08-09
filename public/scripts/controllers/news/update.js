@@ -8,8 +8,11 @@
  * Controller of the nashaLeptaApp
  */
 angular.module('nashaLeptaApp')
-  .controller('NewsUpdateCtrl', function ($scope,$routeParams, FireObjects, SubProjectPrefixer, htmlToPlainText) {
-    var noveltyModelsLocation = SubProjectPrefixer('news');
+  .controller('NewsUpdateCtrl', function ($scope,$routeParams, FireObjects, SubProjectPrefixer, htmlToPlainText, model, youtubeEmbedUtils) {
+
+    $scope.youtubeEmbedUtils = youtubeEmbedUtils;
+
+    var noveltyModelsLocation = SubProjectPrefixer(model);
     $scope.noveltyModelsLocation=noveltyModelsLocation;
     FireObjects.find(noveltyModelsLocation, $routeParams.id).$loaded()
       .then(function(fireNovelty) {
@@ -45,7 +48,7 @@ angular.module('nashaLeptaApp')
       $scope.novelty.$remove()
         .then(function(fireNovelty) {
           $scope.novelty.removing = null;
-          $scope.changeRoute('#/' + noveltyModelsLocation);
+          $scope.changeRoute('#!/' + noveltyModelsLocation);
         }, function(error) {
           $scope.novelty.removing = null;
           console.log('NoveltysUpdateCtrl#removeNovelty: ' + error);

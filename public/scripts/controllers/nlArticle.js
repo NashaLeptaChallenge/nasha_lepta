@@ -8,11 +8,11 @@
  * Controller of the nashaLeptaApp
  */
 angular.module('nashaLeptaApp')
-  .controller('NlArticleCtrl', function ($scope, editorOptions, $sce, IsNeedToCompileFurther, FirebaseLink, $firebaseObject) {
+  .controller('NlArticleCtrl', function ($scope, editorOptions, $sce, IsNeedToCompileFurther, firebase, $firebaseObject) {
 
     $scope.editorOptions = editorOptions;
 
-    $firebaseObject(new Firebase(FirebaseLink+'/'+ $scope.data)).$loaded()
+    $firebaseObject(firebase.database().ref($scope.data)).$loaded()
       .then(function(data) {
         //create one object for better understanding
         var value = data.$value;

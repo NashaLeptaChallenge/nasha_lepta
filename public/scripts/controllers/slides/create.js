@@ -15,7 +15,7 @@ angular.module('nashaLeptaApp')
       description : "Описание слайда",
       buttonName : "Надпись на кнопке",
       cover : "images/slides/children_day.f1eca941.jpg",
-      detailsLink: "#/news"
+      detailsLink: "#!/news"
     };
 
     var slideModelsLocation = SubProjectPrefixer('slides');

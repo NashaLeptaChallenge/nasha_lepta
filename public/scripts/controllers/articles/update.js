@@ -41,7 +41,7 @@ angular.module('nashaLeptaApp')
       $scope.article.$remove()
         .then(function(fireArticle) {
           $scope.article.removing = null;
-          $scope.changeRoute('#/' + articleModelsLocation);
+          $scope.changeRoute('#!/' + articleModelsLocation);
         }, function(error) {
           $scope.article.removing = null;
           console.log('ArticlesUpdateCtrl#removeArticle: ' + error);

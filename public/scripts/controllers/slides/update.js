@@ -40,7 +40,7 @@ angular.module('nashaLeptaApp')
       $scope.slide.$remove()
         .then(function(fireSlide) {
           $scope.slide.removing = null;
-          $scope.changeRoute('#/' + slideModelsLocation);
+          $scope.changeRoute('#!/' + slideModelsLocation);
         }, function(error) {
           $scope.slide.removing = null;
           console.log('SlidesUpdateCtrl#removeSlide: ' + error);

@@ -45,7 +45,7 @@ angular.module('nashaLeptaApp')
       $scope.album.$remove()
         .then(function(fireAlbum) {
           $scope.album.removing = null;
-          $scope.changeRoute('#/' + albumModelsLocation);
+          $scope.changeRoute('#!/' + albumModelsLocation);
         }, function(error) {
           $scope.album.removing = null;
           console.log('AlbumsUpdateCtrl#removeAlbum: ' + error);
